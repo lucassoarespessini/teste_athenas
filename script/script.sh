@@ -1,31 +1,39 @@
 #!/bin/bash 
 
+#Definindo alguns arquivos
 filename="pagina.html"
 filename2="pagina2.html"
 filename3="pagina3.html"
 outputfile="output.json"
 
 
-# Absolute path to this script, e.g. /home/user/bin/foo.sh
+# Absoluto Endereço
 SCRIPT=$(readlink -f "$0")
-# Absolute path this script is in, thus /home/user/bin
+# Absoluto Arquivo
 SCRIPTPATH=$(dirname "$SCRIPT")
 echo $SCRIPTPATH
 cd "$SCRIPTPATH"
 
+# Deletando o output.json
 rm -f "$SCRIPTPATH/$outputfile"
-# Now grab the page or pages we care about.
+
+# Baixando a página HTML
 wget --output-document=$filename \
      https://developer.athenas.online/table.html
 
+# Pegando somente a tabela e salvando em pagina2.html
 sed -n '/<table border="1px"/,/<\/table/p' $filename > $filename2
 
+# Deletando pagina.html
 rm $filename
 
+# Executando o Regex para pegar as colunas
 regexEachCollum="((?<=<td>)(.*?)(?=</codigo>))"
-
 grep -oP "$regexEachCollum" "$SCRIPTPATH/$filename2" > "$SCRIPTPATH/$filename3" 
+
 i=0
+
+# Gerando o arquivo Json
 echo "{" >> "$SCRIPTPATH/$outputfile"
 echo "	\"table\": [" >> "$SCRIPTPATH/$outputfile"
 while IFS= read -r line
