@@ -6,10 +6,10 @@
 
 ## Utilizando um Sistema Operacional Linux:
 
-Executa o comando abaixo, no diretório raiz:
+Executa o comando abaixo no diretório onde está o projeto baixado:
 
 ```sh
-bash /script/script.sh
+sudo bash script/script.sh
 ```
 
 Logo irá gerar o arquivo ./script/output.json, onde está as informações da tabela:
@@ -17,7 +17,7 @@ Logo irá gerar o arquivo ./script/output.json, onde está as informações da t
 
 ## Utilizando Docker
 
-Para esse caso tem que ter o Docker instalado. Depois de ter instalado o Docker, executa os seguintes comandos no diretório raiz:
+Para esse caso tem que ter o Docker instalado. Depois de ter instalado o Docker, executa os seguintes comandos no diretório onde está o projeto baixado:
 
 ```sh
 docker rm $(docker ps -aq)

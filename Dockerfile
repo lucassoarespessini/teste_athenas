@@ -5,3 +5,4 @@ RUN apk add --update grep
 RUN mkdir script
 COPY script/script.sh /script
 RUN bash /script/script.sh
+RUN echo "$(cat /script/output.json)"

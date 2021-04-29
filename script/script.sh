@@ -49,7 +49,7 @@ do
 	i=$((i+1))
 done < "$SCRIPTPATH/$filename3" 
 echo "}" >> "$SCRIPTPATH/$outputfile"
-echo "$(cat /script/output.json)"
+
 
 rm "$SCRIPTPATH/$filename2"
 rm "$SCRIPTPATH/$filename3"
