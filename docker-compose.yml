@@ -1,0 +1,7 @@
+version: '3'
+services:
+  bash:
+    container_name: myBash
+    build: 
+        context: .  
+        dockerfile: Dockerfile
