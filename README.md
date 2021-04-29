@@ -4,7 +4,7 @@
 
 
 
-## Utilizando um Sistema Operacional Linux:
+## Utilizando um Sistema Operacional Linux
 
 Executa o comando abaixo no diretório onde está o projeto baixado:
 
@@ -12,7 +12,7 @@ Executa o comando abaixo no diretório onde está o projeto baixado:
 sudo bash script/script.sh
 ```
 
-Logo irá gerar o arquivo ./script/output.json, onde está as informações da tabela:
+Terminando o script, irá gerar o arquivo ./script/output.json, onde está as informações da tabela.
 
 
 ## Utilizando Docker
@@ -30,4 +30,4 @@ docker-compose up --force-recreate -d
 docker-compose build --no-cache
 docker-compose pull
 ```
-Pode-se ver que será printado as informações da tela em formato json.
+Será printado o arquivo json da tela.
