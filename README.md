@@ -19,6 +19,8 @@ Terminando o script, irá gerar o arquivo ./script/output.json, onde está as in
 
 Para esse caso tem que ter o Docker instalado. Depois de ter instalado o Docker, executa os seguintes comandos no diretório onde está o projeto baixado:
 
+Caso esteja utilizando Linux:
+
 ```sh
 docker rm $(docker ps -aq)
 docker rmi $(docker images -q)
@@ -30,4 +32,21 @@ docker-compose up --force-recreate -d
 docker-compose build --no-cache
 docker-compose pull
 ```
+Caso esteja utilizando Windows:
+
+```sh
+FOR /f "tokens=*" %%i IN ('docker ps -aq') DO docker rm %%i
+FOR /f "tokens=*" %%i IN ('docker images --format "{{.ID}}"') DO docker rmi %%i
+docker system prune -a
+docker-compose ps
+docker-compose rm -f
+docker-compose down
+docker-compose up --force-recreate -d
+docker-compose build --no-cache
+docker-compose pull
+```
+
+
 Será printado o arquivo json da tela.
+
+
