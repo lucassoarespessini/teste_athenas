@@ -2,31 +2,34 @@
 > Participando do desafio em criar um programa automatizado que entre na pagina: https://developer.athenas.online/table.html, capturando os dados da tabela e retorne um json.  A tecnologia utilizada foi shell script.
 
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
+O código foi escrito em Shell Script está presente no arquivo ./script/script.sh. Há duas formas de executar esse script:
 
-One to two paragraph statement about your product and what it does.
+## Caso Esteja Utilizando um Sistema Operacional Linux:
 
-![](header.png)
-
-## Installation
-
-OS X & Linux:
+Executa o comando abaixo, no diretório raiz:
 
 ```sh
-npm install my-crazy-module --save
+bash /script/script.sh
 ```
 
-Windows:
+Logo irá gerar o arquivo ./script/output.json, onde está as informações da tabela:
+
+
+## Utilizando Docker
+
+Para esse caso tem que ter o Docker instalado. Depois de ter instalado o Docker, executa os seguintes comandos no diretório raiz:
 
 ```sh
-edit autoexec.bat
+docker rm $(docker ps -aq)
+docker rmi $(docker images -q)
+docker system prune -a
+docker-compose ps
+docker-compose rm -f
+docker-compose down
+docker-compose up --force-recreate -d
+docker-compose build --no-cache
+docker-compose pull
 ```
-
-## Usage example
-
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
 
 _For more examples and usage, please refer to the [Wiki][wiki]._
 
