@@ -1,10 +1,10 @@
 # Teste Athenas
-> Participando do desafio em criar um programa automatizado que entre na pagina: https://developer.athenas.online/table.html, capturando os dados da tabela e retorne um json.  A tecnologia utilizada foi shell script.
+> Participando do desafio em criar um programa automatizado que entre na pagina: https://developer.athenas.online/table.html, capturando os dados da tabela e retorne um json.  A tecnologia utilizada foi shell script. O código foi escrito em Shell Script está presente no arquivo ./script/script.sh. Há duas formas de executar esse script:
 
 
-O código foi escrito em Shell Script está presente no arquivo ./script/script.sh. Há duas formas de executar esse script:
 
-## Caso Esteja Utilizando um Sistema Operacional Linux:
+
+## Utilizando um Sistema Operacional Linux:
 
 Executa o comando abaixo, no diretório raiz:
 
@@ -30,4 +30,4 @@ docker-compose up --force-recreate -d
 docker-compose build --no-cache
 docker-compose pull
 ```
-
+Pode-se ver que será printado as informações da tela em formato json.
